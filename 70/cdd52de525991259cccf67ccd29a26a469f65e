@@ -1,0 +1,28 @@
+src/joplin_mcp/client.py
+  s_7dec5a67f4650c::t_0401f1ecdef2dd 1-48
+tests/test_import_framework.py
+  s_7dec5a67f4650c::t_f112926971cb30 308-326
+src/joplin_mcp/imports/engine.py
+  s_7dec5a67f4650c::t_756f9201469a11 220-225,230-235
+  s_7dec5a67f4650c::t_6ec3a57f0be29b 11,828,835,841
+src/joplin_mcp/fastmcp_server.py
+  s_7dec5a67f4650c::t_ca965d3190e691 58,355,366
+tests/test_client.py
+  s_7dec5a67f4650c::t_e9aa09bc1f456e 1-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "70cdd52de525991259cccf67ccd29a26a469f65e",
+  "prompts": {},
+  "sessions": {
+    "s_7dec5a67f4650c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1e1980cb9ffeq3KJtQvIG4cf8Y",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Clement Idelon <clement.idelon@lengow.com>"
+    }
+  }
+}
