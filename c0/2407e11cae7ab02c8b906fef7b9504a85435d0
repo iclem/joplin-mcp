@@ -1,0 +1,19 @@
+skills/joplin/SKILL.md
+  s_7dec5a67f4650c::t_40fccae38555b5 63,87
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "c02407e11cae7ab02c8b906fef7b9504a85435d0",
+  "prompts": {},
+  "sessions": {
+    "s_7dec5a67f4650c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1e1980cb9ffeq3KJtQvIG4cf8Y",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Clement Idelon <clement.idelon@lengow.com>"
+    }
+  }
+}
