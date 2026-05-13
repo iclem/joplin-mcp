@@ -1,0 +1,25 @@
+tests/test_tools_notebooks.py
+  s_7dec5a67f4650c::t_0f5e0569528ed4 89,95,126,129-149
+src/joplin_mcp/tools/notebooks.py
+  s_7dec5a67f4650c::t_8ac5867fcc53f7 70
+  s_7dec5a67f4650c::t_bd14304766705d 18,26-28,30,36-41
+  s_7dec5a67f4650c::t_f48c622f40e65f 25,29,31-35,42-43,86-87,89,91,99-100
+tests/test_tools_notebooks_allowlist.py
+  s_7dec5a67f4650c::t_4361398f8dc792 162-164,167,191-193
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "1c10973afb69b159c2e4a43167655869cf19a587",
+  "prompts": {},
+  "sessions": {
+    "s_7dec5a67f4650c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1e1980cb9ffeq3KJtQvIG4cf8Y",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Clement Idelon <clement.idelon@lengow.com>"
+    }
+  }
+}
