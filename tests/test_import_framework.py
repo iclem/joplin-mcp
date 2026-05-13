@@ -305,6 +305,26 @@ class TestJoplinImportEngine:
         mock_client.add_note.assert_called_once()
 
     @pytest.mark.asyncio
+    async def test_import_note_skips_add_when_notebook_unresolved(
+        self, mock_client, mock_config
+    ):
+        """Should fail before add_note when notebook resolution returns None."""
+        engine = JoplinImportEngine(mock_client, mock_config)
+        options = ImportOptions(create_missing_notebooks=False)
+
+        notes = [ImportedNote(title="Test Note", body="Test content", notebook="Missing")]
+        result = await engine.import_batch(notes, options)
+
+        assert result.total_processed == 1
+        assert result.successful_imports == 0
+        assert result.failed_imports == 1
+        assert any(
+            "Could not resolve notebook 'Missing'" in error
+            for error in result.errors
+        )
+        mock_client.add_note.assert_not_called()
+
+    @pytest.mark.asyncio
     async def test_ensure_notebook_creation(self, mock_client, mock_config):
         """Test notebook creation when it doesn't exist."""
         engine = JoplinImportEngine(mock_client, mock_config)

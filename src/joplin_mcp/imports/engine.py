@@ -8,6 +8,7 @@ from typing import Dict, List, Optional, Tuple
 
 from joppy.client_api import ClientApi
 
+from joplin_mcp.client import create_joplin_client
 from joplin_mcp.config import JoplinMCPConfig
 from .types import ImportedNote, ImportOptions, ImportResult
 
@@ -216,10 +217,22 @@ class JoplinImportEngine:
                 notebook_id = await self.ensure_notebook_exists(
                     note.notebook, options, result
                 )
+                if notebook_id is None:
+                    return (
+                        False,
+                        f"Creation failed: Could not resolve notebook '{note.notebook}'",
+                        None,
+                    )
             elif options.target_notebook:
                 notebook_id = await self.ensure_notebook_exists(
                     options.target_notebook, options, result
                 )
+                if notebook_id is None:
+                    return (
+                        False,
+                        f"Creation failed: Could not resolve notebook '{options.target_notebook}'",
+                        None,
+                    )
 
             # Handle duplicate checking
             if options.handle_duplicates != "overwrite":
@@ -812,17 +825,17 @@ def get_joplin_client() -> ClientApi:
     try:
         config = JoplinMCPConfig.load()
         if config.token:
-            return ClientApi(token=config.token, url=config.base_url)
+            return create_joplin_client(token=config.token, url=config.base_url)
         else:
             token = os.getenv("JOPLIN_TOKEN")
             if not token:
                 raise ValueError(
                     "No token found in config file or JOPLIN_TOKEN environment variable"
                 )
-            return ClientApi(token=token, url=config.base_url)
+            return create_joplin_client(token=token, url=config.base_url)
     except Exception:
         token = os.getenv("JOPLIN_TOKEN")
         if not token:
             raise ValueError("JOPLIN_TOKEN environment variable is required")
         url = os.getenv("JOPLIN_URL", "http://localhost:41184")
-        return ClientApi(token=token, url=url)
+        return create_joplin_client(token=token, url=url)

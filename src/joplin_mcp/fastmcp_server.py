@@ -55,6 +55,7 @@ from pydantic import Field
 from typing_extensions import Annotated
 
 from joplin_mcp import __version__ as MCP_VERSION
+from joplin_mcp.client import create_joplin_client
 
 # Import our existing configuration for compatibility
 from joplin_mcp.config import JoplinMCPConfig
@@ -351,7 +352,7 @@ def get_joplin_client() -> ClientApi:
             config = None
 
     if config and getattr(config, "token", None):
-        return ClientApi(token=config.token, url=config.base_url)
+        return create_joplin_client(token=config.token, url=config.base_url)
 
     # Fallback to environment variables
     token = os.getenv("JOPLIN_TOKEN")
@@ -362,7 +363,7 @@ def get_joplin_client() -> ClientApi:
 
     # Prefer configured base URL if available without token
     url = config.base_url if config else os.getenv("JOPLIN_URL", "http://localhost:41184")
-    return ClientApi(token=token, url=url)
+    return create_joplin_client(token=token, url=url)
 
 
 # === NOTEBOOK PATH UTILITIES ===
