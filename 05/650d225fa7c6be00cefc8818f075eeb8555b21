@@ -1,0 +1,27 @@
+tests/test_tools_notebooks.py
+  s_96d068bfa442fc::t_7fea2f4383aa0f 149-153
+  s_96d068bfa442fc::t_668e51e0646631 6,126-128,139,147,154,157-163
+  s_96d068bfa442fc::t_33c3c23a227bb4 155-156,164-178,180
+  s_96d068bfa442fc::t_1242359a3f65af 138,146
+src/joplin_mcp/tools/notebooks.py
+  s_96d068bfa442fc::t_f1d10e6be46b47 91
+  s_96d068bfa442fc::t_3ce31d02455db5 26-29
+  s_96d068bfa442fc::t_d4c8b0610910ac 46
+  s_96d068bfa442fc::t_c0c0930624a57d 4,32-33,44-45,47-50,77-78,94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "05650d225fa7c6be00cefc8818f075eeb8555b21",
+  "prompts": {},
+  "sessions": {
+    "s_96d068bfa442fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e2680-912e-7dc1-a728-6568b7347976",
+        "model": "gpt-5.4"
+      },
+      "human_author": null
+    }
+  }
+}
