@@ -1,0 +1,25 @@
+src/joplin_mcp/tools/notebooks.py
+  s_96d068bfa442fc::t_f1d10e6be46b47 91
+  s_96d068bfa442fc::t_c0c0930624a57d 4,32-33,44-45,47-50,77-78,94
+  s_96d068bfa442fc::t_3ce31d02455db5 26-29,46
+tests/test_tools_notebooks.py
+  s_96d068bfa442fc::t_33c3c23a227bb4 138-141,149-152,161-162,170-184,186
+  s_96d068bfa442fc::t_7fea2f4383aa0f 155-159
+  s_96d068bfa442fc::t_668e51e0646631 6,126-128,142,153,160,163-169
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "b6d5cf248c9fae71e14b1f02124fcd0211e87bd7",
+  "prompts": {},
+  "sessions": {
+    "s_96d068bfa442fc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e2680-912e-7dc1-a728-6568b7347976",
+        "model": "gpt-5.4"
+      },
+      "human_author": "Clement Idelon <clement.idelon@lengow.com>"
+    }
+  }
+}
